@@ -2,7 +2,7 @@ import math
 import numpy as np
 import torch
 
-from src_v2.finance.risk_neutral import rn_noise_shift_std
+from src.risk_neutral import rn_noise_shift_std
 
 
 @torch.no_grad()
