@@ -2,6 +2,8 @@ import math
 import numpy as np
 import torch
 
+from src.risk_neutral import rn_noise_shift_std
+
 @torch.no_grad()
 def rn_constants_std(
         mu: float,
@@ -34,7 +36,6 @@ def rn_constants_std(
     noise_shift_std = eta_t_std * torch.sqrt(1 - alpha_bar)     # (T,)
     return noise_shift_std                                      # (T,)
 
-@torch.no_grad()
 @torch.no_grad()
 def sample_returns_Q_epsilon_shift(
     model: torch.nn.Module,
