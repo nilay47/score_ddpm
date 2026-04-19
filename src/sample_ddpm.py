@@ -36,6 +36,7 @@ def rn_constants_std(
     noise_shift_std = eta_t_std * torch.sqrt(1 - alpha_bar)     # (T,)
     return noise_shift_std                                      # (T,)
 
+@torch.no_grad()
 def sample_returns_Q_std(
         model: torch.nn.Module,
         n_paths: int,
